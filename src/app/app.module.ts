@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import * as angular from 'angular';
-import 'angular-route';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
-angular.module('miApp', ['ngRoute']);
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppModule { }
+export class AppRoutingModule { }
